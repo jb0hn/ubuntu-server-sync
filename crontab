@@ -1,0 +1,42 @@
+# Notice that tasks will be started based on the cron's system
+ 11 # daemon's notion of time and timezones.
+ 12 # 
+ 13 # Output of the crontab jobs (including errors) is sent through
+ 14 # email to the user the crontab file belongs to (unless redirected).
+ 15 # 
+ 16 # For example, you can run a backup of all your user accounts
+ 17 # at 5 a.m every week with:
+ 18 # 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+ 19 # 
+ 20 # For more information see the manual pages of crontab(5) and cron(8)
+ 21 # 
+ 22 # m h  dom mon dow   command
+ 23 #
+ 24 # ┌───────────── minute (0 - 59)
+ 25 # │ ┌───────────── hour (0 - 23)
+ 26 # │ │ ┌───────────── day of month (1 - 31)
+ 27 # │ │ │ ┌───────────── month (1 - 12)
+ 28 # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;                                                                       
+ 29 # │ │ │ │ │                                       7 is also Sunday on some systems)
+ 30 # │ │ │ │ │
+ 31 # │ │ │ │ │
+ 32 # * * * * *  command_to_execute
+ 33 #
+ 34 #
+ 35 #
+ 36 ###### Sample crontab ######
+ 37 #
+ 38 # Empty temp folder every Friday at 5pm
+ 39 # 0 5 * * 5 rm -rf /tmp/*
+ 40 #
+ 41 # Backup images to Google Drive every night at midnight
+ 42 # 0 0 * * * rsync -a ~/Pictures/ ~/Google\ Drive/Pictures/
+ 43 
+ 44 ###### My crontab ######
+ 45 
+ 46 # backup files every hour to server via public network using rsync
+ 47 # 0 * * * * /home/user/Documents/Bash/server-sync/public/public-server-sync-cron.sh  >> /home/user/Documents/Bash/server-sync/public    /public-server-sync.log
+ 48 
+ 49 # backup files every hour to server via home network using rsync
+ 50 0 * * * * /home/user/Documents/Bash/server-sync/home/home-server-sync-cron.sh  >> /home/user/Documents/Bash/server-sync/home/home-se    rver-sync.log
+
